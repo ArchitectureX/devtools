@@ -5,13 +5,8 @@ export type ConfigArgs = {
 export type ModeArgs = {
   packageName: string
   mode?: WebpackMode
-  isPackage?: boolean
+  isMonoRepo?: boolean
   isAnalyze?: boolean
   port?: number
   analyzerPort?: number
-  color?: string
-  htmlOptions?: {
-    title: string
-    template: string
-  }
 }

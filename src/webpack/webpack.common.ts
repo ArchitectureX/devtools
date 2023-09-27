@@ -5,9 +5,9 @@ import nodeExternals from 'webpack-node-externals'
 import { ModeArgs } from './webpack.types'
 
 const getWebpackCommonConfig = (args: ModeArgs): Configuration => {
-  const { isAnalyze, analyzerPort = 9001, packageName, isPackage = true } = args
+  const { isAnalyze, analyzerPort = 9001, packageName, isMonoRepo = true } = args
 
-  const packagesPath = isPackage ? '/packages/' : '/../'
+  const packagesPath = isMonoRepo ? '/packages/' : '/../'
 
   // Client Entry
   const entry = path.resolve(__dirname, `../../../../..${packagesPath}${packageName}/src/index.ts`)
