@@ -67,5 +67,6 @@ const webpackConfig: (args: ConfigArgs) => Promise<Configuration> = async (
 export default webpackConfig
 ```
 
-Contribution
+## Contribution
+
 Feel free to suggest improvements, report issues, or contribute to enhancing these utilities. Your feedback and contributions are welcome!
