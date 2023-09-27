@@ -6,6 +6,7 @@ export type ConfigArgs = {
 export type ModeArgs = {
   packageName: string
   mode?: WebpackMode
+  isPackage?: boolean
   isAnalyze?: boolean
   port?: number
   analyzerPort?: number

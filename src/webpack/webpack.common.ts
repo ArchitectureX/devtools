@@ -5,16 +5,18 @@ import nodeExternals from 'webpack-node-externals'
 import { ModeArgs } from './webpack.types'
 
 const getWebpackCommonConfig = (args: ModeArgs): Configuration => {
-  const { isAnalyze, analyzerPort = 9001, packageName } = args
+  const { isAnalyze, analyzerPort = 9001, packageName, isPackage = true } = args
+
+  const packagesPath = isPackage ? '/packages/' : '/'
 
   // Client Entry
-  const entry = path.resolve(__dirname, `../../../../../packages/${packageName}/src/index.ts`)
+  const entry = path.resolve(__dirname, `../../../../..${packagesPath}${packageName}/src/index.ts`)
 
   // Resolve
   const resolve = {
     extensions: ['.*', '.ts', '.tsx', '.js', '.jsx'],
     alias: {
-      '~': path.resolve(__dirname, `../../../../../packages/${packageName}/src`)
+      '~': path.resolve(__dirname, `../../../../..${packagesPath}${packageName}/src`)
     },
     fallback: {
       buffer: false,
@@ -32,7 +34,7 @@ const getWebpackCommonConfig = (args: ModeArgs): Configuration => {
 
   // Output
   const output = {
-    path: path.resolve(__dirname, `../../../../../packages/${packageName}/dist`),
+    path: path.resolve(__dirname, `../../../../..${packagesPath}${packageName}/dist`),
     filename: 'index.js',
     libraryTarget: 'umd',
     library: 'lib',
