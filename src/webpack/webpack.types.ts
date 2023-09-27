@@ -1,7 +1,6 @@
 export type WebpackMode = 'production' | 'development'
 export type ConfigArgs = {
   mode: WebpackMode
-  packageName: string
 }
 export type ModeArgs = {
   packageName: string
