@@ -5,9 +5,6 @@ lastCommit=$(git log -1 --pretty=oneline)
 
 # Get the commit message type
 types=("fix" "feat" "major")
-# 1.0.0 - major
-# 0.1.0 - feat
-# 0.0.1 - fix
 
 # Extract package name from package.json using grep and awk
 packageName=$(grep '"name"' ./package.json | awk -F': ' '{print $2}' | tr -d '",')
