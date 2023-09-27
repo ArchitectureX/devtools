@@ -28,8 +28,6 @@ if [ -z "$packageName" ]; then
 fi
 
 # Show the package name, organization and package
-echo "Package Name: $packageName"
-echo "Organization: $organization"
 echo "Package: $package"
 echo "Last Commit: $lastCommit"
 
