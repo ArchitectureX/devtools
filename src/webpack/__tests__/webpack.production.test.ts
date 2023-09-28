@@ -1,4 +1,6 @@
-import getWebpackProductionConfig from './webpack.production'
+import { describe, expect, it } from '@jest/globals'
+
+import getWebpackProductionConfig from '../webpack.production'
 
 describe('getWebpackProductionConfig', () => {
   it('should return a configuration object with production mode', () => {

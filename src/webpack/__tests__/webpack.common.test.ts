@@ -1,6 +1,7 @@
+import { describe, expect, it } from '@jest/globals'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
-import getWebpackCommonConfig from './webpack.common'
+import getWebpackCommonConfig from '../webpack.common'
 
 describe('getWebpackCommonConfig', () => {
   it('should return a valid configuration object', () => {

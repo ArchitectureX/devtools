@@ -1,6 +1,7 @@
+import { describe, expect, it } from '@jest/globals'
 import { HotModuleReplacementPlugin, NoEmitOnErrorsPlugin } from 'webpack'
 
-import getWebpackDevelopmentConfig from './webpack.development'
+import getWebpackDevelopmentConfig from '../webpack.development'
 
 describe('getWebpackDevelopmentConfig', () => {
   it('should return a configuration object with development mode', () => {
