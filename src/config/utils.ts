@@ -1,6 +1,4 @@
-import fs from 'fs'
-
-export function loadUserConfig(configPath: string): object {
+export function loadUserConfig(fs: any, configPath: string): object {
   if (!fs.existsSync(configPath)) {
     return {}
   }
