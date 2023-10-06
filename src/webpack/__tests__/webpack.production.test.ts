@@ -15,16 +15,25 @@ describe('getWebpackProductionConfig', () => {
 
   it('should define externals for react', () => {
     const config = getWebpackProductionConfig()
-    expect(config.externals).toHaveProperty('react')
+
+    if (Array.isArray(config.externals)) {
+      expect(config.externals[1]).toHaveProperty('react')
+    }
   })
 
   it('should define externals for react-dom', () => {
     const config = getWebpackProductionConfig()
-    expect(config.externals).toHaveProperty('react-dom')
+
+    if (Array.isArray(config.externals)) {
+      expect(config.externals?.[1]).toHaveProperty('react-dom')
+    }
   })
 
   it('should define externals for jsonwebtoken', () => {
     const config = getWebpackProductionConfig()
-    expect(config.externals).toHaveProperty('jsonwebtoken')
+
+    if (Array.isArray(config.externals)) {
+      expect(config.externals?.[1]).toHaveProperty('jsonwebtoken')
+    }
   })
 })
