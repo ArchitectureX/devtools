@@ -1,5 +1,5 @@
 import path from 'path'
-import { Configuration } from 'webpack'
+import webpack, { Configuration } from 'webpack'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import nodeExternals from 'webpack-node-externals'
 import { ModeArgs } from './webpack.types'
@@ -52,6 +52,8 @@ const getWebpackCommonConfig = (args: ModeArgs): Configuration => {
       })
     )
   }
+
+  plugins.push(new webpack.IgnorePlugin({ resourceRegExp: /^fs$/ }))
 
   // Rules
   const rules = []
