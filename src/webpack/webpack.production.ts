@@ -1,8 +1,9 @@
 import { Configuration } from 'webpack'
+import nodeExternals from 'webpack-node-externals'
 
 const getWebpackProductionConfig = (): Configuration => {
   // Externals
-  const externals = {
+  const customExternals = {
     react: {
       commonjs: 'react',
       commonjs2: 'react',
@@ -17,6 +18,13 @@ const getWebpackProductionConfig = (): Configuration => {
     },
     jsonwebtoken: 'jsonwebtoken'
   }
+
+  const externals = [
+    nodeExternals({
+      allowlist: Object.keys(customExternals)
+    }),
+    customExternals
+  ]
 
   const webpackConfig = {
     mode: 'production',
