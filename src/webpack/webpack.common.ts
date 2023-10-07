@@ -71,7 +71,10 @@ const getWebpackCommonConfig = (args: ModeArgs): Configuration => {
     module: {
       rules
     },
-    target: 'node'
+    target: 'node',
+    node: {
+      fs: 'empty'
+    }
   }
 
   return webpackConfig as Configuration
